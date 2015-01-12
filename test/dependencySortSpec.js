@@ -1,5 +1,5 @@
 import assert from 'assert';
-import dependencySort from '../index.js';
+import dependencySort from '../index.pretest.js';
 
 let items = [
 	{name: 'jquery-plugin1', src: 'jquery-plugin-1.2.1.js', dep: ['jquery']},

@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:6to5/register",
-    "pretest": "eslint index.js"
+    "pretest": "eslint index.js && cp index.js index.pretest.js",
+    "instrument": "istanbul instrument index.es5.js > index.pretest.js",
+    "compile:js": "6to5 index.js > index.es5.js",
+    "posttest": "rm index.es5*.js & rm index.pretest.js",
+    "cover": "mocha --compilers js:6to5/register -R mocha-istanbul",
+    "precover": "npm run compile:js && npm run instrument",
+    "postcover": "rm index.pretest.js"
   },
   "keywords": [
     "dependency",
@@ -16,6 +22,8 @@
   "devDependencies": {
     "6to5": "^2.10.0",
     "eslint": "^0.11.0-alpha.0",
-    "mocha": "^2.1.0"
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
+    "mocha-istanbul": "^0.2.0"
   }
 }
