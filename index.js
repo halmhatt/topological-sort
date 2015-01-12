@@ -54,7 +54,7 @@ function isMarked(item, mark = null) {
 /*eslint no-unused-vars: 0 , no-use-before-define: 0 */
 export function sort(
 		list,
-		dependencyFunction = item => item.dep,
+		dependencyFunction = item => item.dep || item.dependencies || [],
 		identifierFunction = item => item.name) {
 
 	let sorted = [];

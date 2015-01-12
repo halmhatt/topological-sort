@@ -43,4 +43,50 @@ describe('dependency-sort', () => {
 			assert.equal(dep.id, names[i], 'Names should match');
 		}
 	});
+
+	it('should allow for none defined dependencies', () => {
+		let items = [
+			{name: 'jquery-plugin1', src: 'jquery-plugin-1.2.1.js', dep: ['jquery']},
+			{name: 'jquery', src: 'jquery-1.6.2.js'}
+		];
+
+		let sorted = dependencySort.sort(items);
+
+		assert.deepEqual(sorted, items.reverse(), 'Items should be in the right order');
+	});
+
+	it('should find none DAGs', () => {
+		let items = [
+			{name: 'jquery-plugin1', src: 'jquery-plugin-1.2.1.js', dep: ['jquery']},
+			{name: 'jquery', src: 'jquery-1.6.2.js', dep: ['jquery-plugin1']}
+		];
+
+		assert.throws(function() {
+			dependencySort.sort(items);
+		}, 'Should throw for none DAGs');
+	});
+
+	it('should sort multiple items in the right order', () => {
+		let items = [
+			{name: 'lib5', dep: ['lib4']},
+			{name: 'lib4', dep: ['lib3']},
+			{name: 'lib3', dep: ['lib2']},
+			{name: 'lib2', dep: ['lib1']},
+			{name: 'lib1'}
+		];
+
+		let sorted = dependencySort.sort(items);
+		assert.deepEqual(sorted, items.reverse(), 'Order should be correct');
+	});
+
+	it('should handle multiple dependencies', () => {
+		let items = [
+			{name: 'lib3', dep: ['lib1', 'lib2']},
+			{name: 'lib2', dep: ['lib1']},
+			{name: 'lib1'}
+		];
+
+		let sorted = dependencySort.sort(items);
+		assert.deepEqual(sorted, items.reverse(), 'Should be in the correct order');
+	});
 });

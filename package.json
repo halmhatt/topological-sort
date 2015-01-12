@@ -1,5 +1,5 @@
 {
-  "name": "dependency-sort",
+  "name": "topological-sort",
   "version": "1.0.0",
   "description": "Sort dependencies",
   "main": "index.js",
