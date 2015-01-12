@@ -1,0 +1,21 @@
+{
+  "name": "dependency-sort",
+  "version": "1.0.0",
+  "description": "Sort dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:6to5/register",
+    "pretest": "eslint index.js"
+  },
+  "keywords": [
+    "dependency",
+    "sort"
+  ],
+  "author": "Jacob Carlsson",
+  "license": "MIT",
+  "devDependencies": {
+    "6to5": "^2.10.0",
+    "eslint": "^0.11.0-alpha.0",
+    "mocha": "^2.1.0"
+  }
+}
