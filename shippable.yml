@@ -5,8 +5,7 @@ node_js:
 
 # The path for Xunit to output test reports
 env:
-  - XUNIT_FILE=shippable/testresults/result.xml
-  - ISTANBUL_REPORTERS=cobertura
+  - XUNIT_FILE=shippable/testresults/result.xml ISTANBUL_REPORTERS=cobertura
 
 # Create directories for test and coverage reports
 before_script:
