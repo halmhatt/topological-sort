@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:6to5/register",
-    "pretest": "eslint index.js && cp index.js index.pretest.js",
+    "eslint": "eslint -c .eslintrc index.js",
+    "pretest": "npm run eslint && cp index.js index.pretest.js",
     "instrument": "istanbul instrument index.es5.js > index.pretest.js",
     "compile:js": "6to5 index.js > index.es5.js",
     "posttest": "rm index.es5*.js & rm index.pretest.js",
