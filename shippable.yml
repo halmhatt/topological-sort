@@ -14,3 +14,6 @@ before_script:
 
 script:
 	- npm run ci:test
+
+after_script:
+	- npm run ci:cover

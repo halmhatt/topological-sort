@@ -15,7 +15,10 @@
     "postcover": "rm index.pretest.js",
     "ci:test": "mocha --compilers js:6to5/register --reporter xunit-file",
     "preci:test": "cp index.js index.pretest.js",
-    "postci:test": "mocha --compilers js:6to5/register -r mocha-istanbul"
+
+    "ci:cover": "mocha --compilers js:6to5/register -R mocha-istanbul",
+    "preci:cover": "npm run compile:js && npm run instrument",
+    "postci:cover": "rm index.pretest.js index.es5.js && mv cobertura-coverage.xml shippable/codecoverage/"
   },
   "keywords": [
     "dependency",

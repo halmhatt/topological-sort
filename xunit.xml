@@ -1,0 +1,8 @@
+<testsuite name="Mocha Tests" tests="6" failures="0" errors="0" skipped="0" timestamp="Wed, 14 Jan 2015 08:43:35 GMT" time="0.008">
+<testcase classname="dependency-sort" name="should sort items correctly" time="0.001"/>
+<testcase classname="dependency-sort" name="should work with user defined compare function" time="0"/>
+<testcase classname="dependency-sort" name="should allow for none defined dependencies" time="0.001"/>
+<testcase classname="dependency-sort" name="should find none DAGs" time="0"/>
+<testcase classname="dependency-sort" name="should sort multiple items in the right order" time="0"/>
+<testcase classname="dependency-sort" name="should handle multiple dependencies" time="0"/>
+</testsuite>
