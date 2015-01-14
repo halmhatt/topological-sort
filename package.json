@@ -14,7 +14,7 @@
     "precover": "npm run compile:js && npm run instrument",
     "postcover": "rm index.pretest.js",
     "ci:test": "mocha --compilers js:6to5/register --reporter xunit-file",
-    "preci:test": "npm run pretest",
+    "preci:test": "cp index.js index.pretest.js",
     "postci:test": "mocha --compilers js:6to5/register -r mocha-istanbul"
   },
   "keywords": [

@@ -51,7 +51,7 @@ function isMarked(item, mark = null) {
  * @param  {Function} identifierFunction   Should return an identifier for the item
  * @return {Object[]}                      Sorted array of items
  */
-/*eslint no-unused-vars: 0 , no-use-before-define: 0 */
+/*eslint no-unused-vars: 0 , no-use-before-define: 0, reserved-word: 0 */
 export function sort(
 		list,
 		dependencyFunction = item => item.dep || item.dependencies || [],
