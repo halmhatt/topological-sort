@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+	- 0.10.25
+
+# The path for Xunit to output test reports
+env:
+  - XUNIT_FILE=shippable/testresults/result.xml
+  - ISTANBUL_REPORTERS=cobertura
+
+# Create directories for test and coverage reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+script:
+	- npm run ci:test

@@ -11,7 +11,10 @@
     "posttest": "rm index.es5*.js & rm index.pretest.js",
     "cover": "mocha --compilers js:6to5/register -R mocha-istanbul",
     "precover": "npm run compile:js && npm run instrument",
-    "postcover": "rm index.pretest.js"
+    "postcover": "rm index.pretest.js",
+    "ci:test": "mocha --compilers js:6to5/register --reporter xunit-file",
+    "preci:test": "npm run pretest",
+    "postci:test": "mocha --compilers js:6to5/register -r mocha-istanbul"
   },
   "keywords": [
     "dependency",
@@ -24,6 +27,7 @@
     "eslint": "^0.11.0-alpha.0",
     "istanbul": "^0.3.5",
     "mocha": "^2.1.0",
-    "mocha-istanbul": "^0.2.0"
+    "mocha-istanbul": "^0.2.0",
+    "xunit-file": "0.0.6"
   }
 }
