@@ -1,4 +1,5 @@
 # Topological sort
+[![Build Status](https://api.shippable.com/projects/54b628345ab6cc1352888f23/badge?branchName=master)](https://app.shippable.com/projects/54b628345ab6cc1352888f23/builds/latest)
 
 Sort dependencies
 
