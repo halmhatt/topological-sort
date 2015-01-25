@@ -1,8 +1,15 @@
-env:
-  node: true
-
-rules:
-  quotes: [1, "single", "avoid-escape"]
-
-settings:
-  ecmascript: 6
+{
+	"env": {
+		"node": true
+	},
+	"rules": {
+		"quotes": [1, "single", "avoid-escape"]
+	},
+	"ecmaFeatures": {
+		"blockBindings": true,
+		"forOf": true,
+		"generators": true,
+		"defaultParams": true,
+		"templateStrings": true
+	}
+}
